@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Software de Balanceo - SENA</title> 
+    <link rel="stylesheet" href="CSS/styles_iniciar_sesion.css">
+</head>
+<body>
+    <!-- Encabezado de la página -->
+    <header>
+        <img src="img/LOGO_HEADER_TRASPARENTE.png" alt="Logo del Proyecto" id="logo"> <!-- Imagen del logo -->
+        <p>SOFTWARE DE BALANCEO PARA CÁLCULO DE RACIONES PARA BOVINOS EN LAS DIFERENTES ETAPAS PRODUCTIVAS EN EL CENTRO BIOTECNOLÓGICO DEL CARIBE</p> <!-- Descripción del software -->
+    </header>
+    
+    <!-- Carrusel de imágenes de bovinos -->
+    <div class="content">
+        <section id="carousel" class="carousel">
+            <!-- Cada div contiene una imagen del carrusel, con clases para facilitar su activación/desactivación mediante JavaScript -->
+            <div class="carousel-slide active">
+                <img src="img/BOVINO_9.png" alt="Imagen 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="img/BOVINO_2.jpg" alt="Imagen 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="img/BOVINO_6.jpg" alt="Imagen 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="img/BOVINO_4.jpg" alt="Imagen 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="img/BOVINO_7.jpg" alt="Imagen 5">
+            </div>
+        </section>
+
+        <!-- Formulario de Inicio de Sesión -->
+        <div class="form-container" id="loginForm">
+            <h2>Iniciar Sesión</h2> <!-- Título del formulario -->
+            <form onsubmit="loginUser(event)"> <!-- Llama a la función de JavaScript 'loginUser' al enviar -->
+                <div class="form-group">
+                    <label for="role">Tipo de Rol</label> <!-- Etiqueta para el rol del usuario -->
+                    <select id="role" required>
+                        <option value="" disabled selected>Seleccione su rol</option>
+                        <option value="aprendiz">Aprendiz</option>
+                        <option value="instructor">Instructor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label> <!-- Campo para el correo -->
+                    <input type="email" id="email" placeholder="Ingrese su correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label> <!-- Campo para la contraseña -->
+                    <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+                </div>
+                <div class="button-group">
+                    <button type="button" onclick="toggleForm('registerForm')">Registro</button> <!-- Botón para cambiar al formulario de registro -->
+                    <button type="submit">Iniciar Sesión</button> <!-- Botón de envío para iniciar sesión -->
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div class="form-container" id="registerForm">
+            <h2>Registro</h2> <!-- Título del formulario -->
+            <form onsubmit="registerUser(event)"> <!-- Llama a la función 'registerUser' en el envío -->
+                <div class="form-group">
+                    <label for="registerRole">Tipo de Rol</label>
+                    <select id="registerRole" required> <!-- Selección del rol del usuario -->
+                        <option value="aprendiz">Aprendiz</option>
+                        <option value="instructor">Instructor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nombres y Apellidos</label> <!-- Campo para el nombre -->
+                    <input type="text" id="name" placeholder="Ingrese sus nombres y apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Correo Electrónico</label> <!-- Campo para el correo -->
+                    <input type="email" id="registerEmail" placeholder="Ingrese su correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Contraseña</label> <!-- Campo para la contraseña -->
+                    <input type="password" id="registerPassword" placeholder="Ingrese su contraseña" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit">Registrarme</button> <!-- Botón de envío para el registro -->
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="js/main_iniciar_sesion.js"></script> <!-- Script JS personalizado -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Librería para alertas personalizadas -->
+</body>
+</html>
